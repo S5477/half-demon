@@ -6,7 +6,13 @@ public class CursorEditor : MonoBehaviour
     private Texture2D cursorTexture;
     private CursorMode _cursorMode = CursorMode.Auto;
     private Vector2 _hotSpot = Vector2.zero;
-    void OnMouseEnter() { 
+   
+    private void Start()
+    {
+        Cursor.SetCursor(cursorTexture, _hotSpot, _cursorMode);
+    }
+
+    void OnMouseEnter() {
         Cursor.SetCursor(cursorTexture, _hotSpot, _cursorMode);
     }
 
