@@ -47,28 +47,31 @@ public class AttackSystem : MonoBehaviour
 
     public void SetAtack(InputAction.CallbackContext context)
     {
-        string key = context.action.activeControl.name;
-
-        switch (key)
+        if (Pause._isPause)
         {
-            case "1":
-                _atackEnum = AtackEnum.Water;
-                _image.sprite= _sprites[0];
-                _imageEnemy.sprite= _spritesEnemy[0];
-                break;
-            case "2":
-                _atackEnum = AtackEnum.Fair;
-                _image.sprite = _sprites[1];
-                _imageEnemy.sprite = _spritesEnemy[1];
-                break;
-            case "3":
-                _atackEnum = AtackEnum.Terra;
-                _image.sprite = _sprites[2];
-                _imageEnemy.sprite = _spritesEnemy[2];
-                break;
-            default:
-                break;
+            string key = context.action.activeControl.name;
 
+            switch (key)
+            {
+                case "1":
+                    _atackEnum = AtackEnum.Water;
+                    _image.sprite = _sprites[0];
+                    _imageEnemy.sprite = _spritesEnemy[0];
+                    break;
+                case "2":
+                    _atackEnum = AtackEnum.Fair;
+                    _image.sprite = _sprites[1];
+                    _imageEnemy.sprite = _spritesEnemy[1];
+                    break;
+                case "3":
+                    _atackEnum = AtackEnum.Terra;
+                    _image.sprite = _sprites[2];
+                    _imageEnemy.sprite = _spritesEnemy[2];
+                    break;
+                default:
+                    break;
+
+            }
         }
     }
 }

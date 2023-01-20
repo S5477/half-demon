@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Killing : MonoBehaviour
 {
@@ -16,7 +17,12 @@ public class Killing : MonoBehaviour
 
     public void AddKilling()
     {
-       _killing += 1;
+        _killing += 1;
+
+        if (_killing >= 100)
+        {
+            SceneManager.LoadScene("win");
+        }
     }
 
 

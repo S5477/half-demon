@@ -20,18 +20,23 @@ public class Health : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        _health = _health - damage;
-
-        if(_health <= 0)
+        if (!Pause._isPause)
         {
-            if(!_isPlayer) {
-                _player.GetComponent<Killing>().AddKilling();
-            } else
-            {
-                SceneManager.LoadScene("fail");
-            }
+            _health = _health - damage;
 
-            Destroy(gameObject);
+            if (_health <= 0)
+            {
+                if (!_isPlayer)
+                {
+                    _player.GetComponent<Killing>().AddKilling();
+                }
+                else
+                {
+                    SceneManager.LoadScene("fail");
+                }
+
+                Destroy(gameObject);
+            }
         }
             
     }

@@ -20,7 +20,7 @@ public class InitAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!_checkAttack)
+        if(!_checkAttack && !Pause._isPause)
         {
             if(_attackTimer <= 0f) {
                 _attackTimer = _attackTimerSec;
@@ -36,7 +36,7 @@ public class InitAttack : MonoBehaviour
 
     public void AttackAnim(InputAction.CallbackContext context)
     {
-        if (_checkAttack)
+        if (_checkAttack && !Pause._isPause)
         {
             GameObject prefab = GetAttackType();
             Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

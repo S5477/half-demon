@@ -8,4 +8,5 @@ public class StartUI : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
 }

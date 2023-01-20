@@ -21,15 +21,17 @@ public class Attack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == enemyLayer)
-        {
-            if (col.gameObject.GetComponent<Enemy>().GetAttackType() == _attackType)
+        if (!Pause._isPause) {
+            if (col.gameObject.layer == enemyLayer)
             {
-                col.gameObject.GetComponent<Health>().takeDamage(gameObject.GetComponent<Damage>().getDamage());
-            }
+                if (col.gameObject.GetComponent<Enemy>().GetAttackType() == _attackType)
+                {
+                    col.gameObject.GetComponent<Health>().takeDamage(gameObject.GetComponent<Damage>().getDamage());
+                }
 
-            Destroy(gameObject);
-        }
+                Destroy(gameObject);
+            }
+        }    
     }
 
     // Start is called before the first frame update
@@ -61,7 +63,7 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rb.MovePosition(_rb.position + _direction * Time.fixedDeltaTime * _speed);
+        if (!Pause._isPause) _rb.MovePosition(_rb.position + _direction * Time.fixedDeltaTime * _speed);
     }
 
 }

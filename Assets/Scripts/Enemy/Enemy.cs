@@ -21,16 +21,25 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == playerLayer)
+        if (!Pause._isPause)
         {
-            collision.gameObject.GetComponent<Health>().takeDamage(gameObject.GetComponent<Damage>().getDamage());
+            if (collision.gameObject.layer == playerLayer)
+            {
+                collision.gameObject.GetComponent<Health>().takeDamage(gameObject.GetComponent<Damage>().getDamage());
+            }
         }
+        
     }
 
     private void FixedUpdate()
     {
-        _agent.destination = _player.transform.position;
-
+        if (!Pause._isPause)
+        {
+            _agent.destination = _player.transform.position;
+        } else
+        {
+            _agent.destination = _agent.transform.position;
+        }
     }
 
     public AtackEnum GetAttackType()

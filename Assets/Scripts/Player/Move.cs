@@ -23,14 +23,20 @@ public class Move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Flipment();
-        AnimWalk();
-        _rb.MovePosition(_rb.position + _direction * Time.fixedDeltaTime * _speed);
+        if(!Pause._isPause)
+        {
+            Flipment();
+            AnimWalk();
+            _rb.MovePosition(_rb.position + _direction * Time.fixedDeltaTime * _speed);
+        }
     }
 
     public void Movement(InputAction.CallbackContext context)
     {
-        _direction = context.ReadValue<Vector2>();
+        if (!Pause._isPause)
+        {
+            _direction = context.ReadValue<Vector2>();
+        }
     }
 
     private void Flipment()
