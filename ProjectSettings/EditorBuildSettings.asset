@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: b17ec8126c0912a4eb95aa26085150f9
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/fail.unity
+    guid: 0be84512ed298c24198b958534e835fa
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 419a2e33a1fb5624a9e659f9a35ae301, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7ed22e566a9f2154186c4d8365675ccc, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: cb5abca1d84c95548b56014b6e2343d8, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 2509bf9164c089a46b4c41c317992db8, type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: d7ec098d2e839fd4aa69011132719779, type: 2}
