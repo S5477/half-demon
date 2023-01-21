@@ -47,7 +47,7 @@ public class AttackSystem : MonoBehaviour
 
     public void SetAtack(InputAction.CallbackContext context)
     {
-        if (Pause._isPause)
+        if (!Pause._isPause)
         {
             string key = context.action.activeControl.name;
 
